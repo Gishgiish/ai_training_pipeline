@@ -27,5 +27,8 @@ COPY . .
 # Create the data directory for output
 RUN mkdir -p data
 
+# Expose the port that streamlit uses
+EXPOSE 8501
+
 # The command to run when the container starts
-CMD ["python", "run_pipeline.py"]
+CMD ["streamlit", "run", "competitor_intel/dashboard.py", "--server.port=8501", "--server.address=0.0.0.0"]
