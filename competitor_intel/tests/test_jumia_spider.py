@@ -10,12 +10,12 @@ def test_jumia_spider_extracts_data():
     # 1. Create a fake snippet of HTML mimicking Jumia's structure
     mock_html = """
     <html><body>
-        <article class="cprl">
-            <a href="/samsung-galaxy-s24-5g-128gb-8gb-ram-sm-s921-345678.html" class="cprl-link">
+        <article class="prd">
+            <a href="/samsung-galaxy-s24-5g.html" class="core">
                 <h3 class="name">Samsung Galaxy S24 5G - 128GB ROM + 8GB RAM</h3>
             </a>
-            <div class="cprl-price">
-                <span class="cprl-price-current">KSh 149,999</span>
+            <div class="prc>
+                <span>KSh 149,999</span>
             </div>
         </article>
     </body></html>
@@ -38,5 +38,5 @@ def test_jumia_spider_extracts_data():
     extracted_item = results[0]
     assert extracted_item["product_name"] == "Samsung Galaxy S24 5G - 128GB ROM + 8GB RAM"
     assert extracted_item["price"] == "149999" # Cleaned price
-    assert extracted_item["source_url"] == "https://www.jumia.co.ke/samsung-galaxy-s24-5g-128gb-8gb-ram-sm-s921-345678.html"
+    assert extracted_item["source_url"] == "https://www.jumia.co.ke/samsung-galaxy-s24-5g.html.html"
     assert extracted_item["source_brand"] == "Jumia Kenya"

@@ -16,7 +16,7 @@ def test_valid_item_passes_through_pipeline():
     }
 
     # Scrapy pipeline method process_item will be used here
-    result = pipeline.process_item(valid_item, spider=None)
+    result = pipeline.process_item(valid_item)
 
     # Expect a clean library
     assert isinstance(result, dict)
@@ -39,4 +39,4 @@ def test_invalid_item_is_dropped():
 
     # Expect pipeline to catch the error
     with pytest.raises(DropItem):
-        pipeline.process_item(invalid_item, spider=None)
+        pipeline.process_item(invalid_item)

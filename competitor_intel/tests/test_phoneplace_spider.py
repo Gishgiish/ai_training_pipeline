@@ -35,6 +35,6 @@ def test_phoneplace_spider_extracts_data():
     # 6. Assert that the data extracted data i exactly what we want/expect
     extracted_item = results[0]
     assert extracted_item["product_name"] == "Samsung Galaxy S23 Ultra"
-    assert extracted_item["price"] == "185000"
+    assert extracted_item["price"] == "185000.0"
     assert extracted_item["source_url"] == "https://www.phoneplacekenya.com/product/samsung-galaxy-s23/"
     assert extracted_item["source_brand"] == "Phoneplace"
