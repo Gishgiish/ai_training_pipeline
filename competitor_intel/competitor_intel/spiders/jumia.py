@@ -45,7 +45,7 @@ class JumiaSpider(scrapy.Spider):
             # Guard clause ensures we only yield if we actually found a product name
             if name and name.strip():
                 yield {
-                    "product_name": name.strip(),
+                    "product_name": name.strip() if name else None,
                     "price": float(clean_price) if clean_price else None,
                     "source_url": full_link,
                     "source_brand": "Jumia Kenya"

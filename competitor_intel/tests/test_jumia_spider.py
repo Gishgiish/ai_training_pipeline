@@ -13,7 +13,7 @@ def test_jumia_spider_extracts_data():
                 <h3 class="name">Samsung Galaxy S24 5G - 128GB ROM + 8GB RAM</h3>
             </a>
             <div class="prc">
-                <span>KSh 149,999</span>
+                KSh 149,999
             </div>
         </article>
     </body></html>
