@@ -81,7 +81,7 @@ class DataQualityMonitorPipeline:
             logger.critical(
                 f"CRITICAL DATA QUALITY ALERT for {spider.name}! "
                 f"Drop rate is {drop_rate:.1f}%, which exceeds the {self.drop_threshold * 100}% threshold. "
-                f"Immediate investigation required"
+                f"Immediate investigation required."
             )
 
     
