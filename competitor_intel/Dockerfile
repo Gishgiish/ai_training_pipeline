@@ -1,5 +1,9 @@
 FROM python:3.12-slim
 
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
 
 # Intall system dependencies required for Playwright (chromium)
@@ -15,7 +19,10 @@ RUN apt-get update && apt-get install -y \
 
 # Copy and install python dependencies 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Install Playwright browsers and their OS dependencies
 RUN playwright install chromium
