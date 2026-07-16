@@ -29,7 +29,7 @@ class JumiaSpider(scrapy.Spider):
            
             # 3. Extract and Clean Price
             # Jumia wraps the price in a div with class 'prc'
-            raw_price = product.css("div.prc::text").get()
+            raw_price = product.css("div.prc span::text, div.prc::text").get()
             clean_price = None
             
             if raw_price:
