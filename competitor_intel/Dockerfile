@@ -39,3 +39,4 @@ EXPOSE 8501
 
 # The command to run when the container starts
 CMD ["sh", "-c", "streamlit run dashboard.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true"]
+
