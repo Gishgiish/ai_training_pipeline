@@ -38,4 +38,4 @@ RUN mkdir -p data
 EXPOSE 8501
 
 # The command to run when the container starts
-CMD ["streamlit", "run", "competitor_intel/dashboard.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["sh", "-c", "streamlit run dashboard.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true"]

@@ -107,3 +107,8 @@ PLAYWRIGHT_LAUNCH_OPTIONS = {
 LOG_FORMAT = "%(asctime)s [%(name)s] %(levelname)s: %(message)s" 
 LOG_DATEFORMAT = "%Y-%m-%d %H:%M:%S"
 LOG_LEVEL = "INFO" # can be changed to DEBUG for deep troubleshooting
+
+
+FEEDS = {
+    "data/%(name)s_output.jsonl": {"format": "jsonlines", "overwrite": True},
+}

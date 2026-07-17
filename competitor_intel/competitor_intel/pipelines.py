@@ -13,7 +13,7 @@ class PydanticValidationPipeline:
     Scrapy Item Pipeline that validates scraped dictionaries against our Pydantic Product model
     """
 
-    def process_item(self, item):
+    def process_item(self, item, spider):
         """
         This method is called for evert Item yielded by the spider.
         """
